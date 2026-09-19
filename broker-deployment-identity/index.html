@@ -1,0 +1,1918 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="This is the software contract and provisional SNP adapter specification for #144.">
+      
+      
+      
+        <link rel="canonical" href="https://wcm.agentrust-io.com/broker-deployment-identity/">
+      
+      
+        <link rel="prev" href="../owner-provisioning-client/">
+      
+      
+        <link rel="next" href="../broker-boot-loader/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+  <title>Broker deployment identity - Weight Custody Manifest</title>
+
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="https://agentrust-io.com/design-system.css?v=22">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AgenTrust">
+  <meta property="og:title" content="Broker deployment identity - Weight Custody Manifest">
+  <meta property="og:description" content="This is the software contract and provisional SNP adapter specification for #144.">
+  <meta property="og:url" content="https://wcm.agentrust-io.com/broker-deployment-identity/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://wcm.agentrust-io.com/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Weight Custody Manifest: release model weights only to an attested runtime">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Broker deployment identity - Weight Custody Manifest">
+  <meta name="twitter:description" content="This is the software contract and provisional SNP adapter specification for #144.">
+  <meta name="twitter:image" content="https://wcm.agentrust-io.com/assets/og.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://agentrust-io.com/#organization",
+        "name": "AgenTrust",
+        "url": "https://agentrust-io.com/",
+        "sameAs": [
+          "https://github.com/agentrust-io",
+          "https://trace.agentrust-io.com",
+          "https://manifest.agentrust-io.com",
+          "https://cmcp.agentrust-io.com",
+          "https://ca2a.agentrust-io.com",
+          "https://wcm.agentrust-io.com",
+          "https://tests.agentrust-io.com",
+          "https://governance.agentrust-io.com"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://wcm.agentrust-io.com/#website",
+        "name": "Weight Custody Manifest",
+        "url": "https://wcm.agentrust-io.com/",
+        "publisher": { "@id": "https://agentrust-io.com/#organization" }
+      },
+      {
+        "@type": "TechArticle",
+        "@id": "https://wcm.agentrust-io.com/broker-deployment-identity/#page",
+        "url": "https://wcm.agentrust-io.com/broker-deployment-identity/",
+        "name": "Broker deployment identity - Weight Custody Manifest",
+        "headline": "Broker deployment identity - Weight Custody Manifest",
+        "description": "This is the software contract and provisional SNP adapter specification for #144.",
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://wcm.agentrust-io.com/#website" },
+        "publisher": { "@id": "https://agentrust-io.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Weight Custody Manifest", "item": "https://wcm.agentrust-io.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Broker deployment identity - Weight Custody Manifest", "item": "https://wcm.agentrust-io.com/broker-deployment-identity/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#broker-deployment-identity-approval-contract" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Weight Custody Manifest" class="md-header__button md-logo" aria-label="Weight Custody Manifest" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Weight Custody Manifest
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Broker deployment identity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/agentrust-io/weight-custody-manifest" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    agentrust-io/weight-custody-manifest
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/" class="md-tabs__link">
+          
+  
+  
+  Get started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../spec-overview/" class="md-tabs__link">
+          
+  
+  
+  Specification
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../reference-kbs/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../roadmap/" class="md-tabs__link">
+          
+  
+  
+  Project
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Weight Custody Manifest" class="md-nav__button md-logo" aria-label="Weight Custody Manifest" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Weight Custody Manifest
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/agentrust-io/weight-custody-manifest" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    agentrust-io/weight-custody-manifest
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Get started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/how-it-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How WCM works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Specification
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spec-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../measured-launch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Azure measured launch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificate-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Provider certificate policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oms-interoperability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenSSF Model Signing interop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../threat-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Threat model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-trust/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key-release trust boundary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conformance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema and conformance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference-kbs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference KBS image
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provisioned-broker-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Provisioned receiver service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../owner-provisioning-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Owner provisioning client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broker deployment identity
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broker deployment identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#platform-neutral-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform-neutral requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-each-identifier-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What each identifier means
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derive-and-check-an-owner-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Derive and check an owner approval
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provisional-adapter-snp-direct-boot-with-an-initrd-contained-broker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provisional adapter: SNP direct boot with an initrd-contained broker
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-hardware-validation-separately-authorized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required hardware validation, separately authorized
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broker-boot-loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Provisional boot loader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broker-measurement-profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Provisional measurement profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protected-runtime-evidence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protected-runtime evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/agentrust-io/examples/tree/main/weight-custody-manifest" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runnable examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sponsors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sponsors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#platform-neutral-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform-neutral requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-each-identifier-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What each identifier means
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derive-and-check-an-owner-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Derive and check an owner approval
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provisional-adapter-snp-direct-boot-with-an-initrd-contained-broker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provisional adapter: SNP direct boot with an initrd-contained broker
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-hardware-validation-separately-authorized" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required hardware validation, separately authorized
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../reference-kbs/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Guides
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="broker-deployment-identity-approval-contract">Broker deployment identity: approval contract<a class="headerlink" href="#broker-deployment-identity-approval-contract" title="Permanent link">&para;</a></h1>
+<p>This is the software contract and provisional SNP adapter specification for
+<a href="https://github.com/agentrust-io/weight-custody-manifest/issues/144">#144</a>.
+It derives a deterministic owner-side approval record from local build inputs
+and constrains provisioning to the approved policy. It does <strong>not</strong> establish
+that a running broker executes those inputs. No live hardware validation of this
+profile has been performed. The <a href="../broker-boot-loader/">provisional boot builder and loader</a>
+now assemble a runtime-contained initramfs; firmware/kernel boot coverage remains
+unvalidated.</p>
+<h2 id="platform-neutral-requirements">Platform-neutral requirements<a class="headerlink" href="#platform-neutral-requirements" title="Permanent link">&para;</a></h2>
+<p>A deployment identity has three independent obligations:</p>
+<ol>
+<li><strong>Approval before deployment.</strong> An independent owner approves the code,
+   configuration, boot/loading chain, dependencies and platform policy. The
+   expected identity must be derivable without asking the target what to trust.</li>
+<li><strong>Evidence-to-execution binding.</strong> An authenticated platform measurement must
+   cover an approved loader that enforces those inputs. A signed guest assertion
+   or a digest supplied by an untrusted host is insufficient on its own.</li>
+<li><strong>Instance binding and continuity.</strong> Fresh evidence must bind the provisioning
+   recipient key and effective policy to this instance. Post-appraisal mutation,
+   administrative entry points, key export and restart must obey the deployment
+   contract. Approval hashes cannot enforce these properties.</li>
+</ol>
+<p>Each platform adapter must state its measurement semantics, independently
+derivable inputs, trusted computing base and unsupported cases. The first record
+format supports only <code>wcm/snp-direct-boot-initrd/v1</code>; unknown profiles are rejected.
+It does not reinterpret OCI digests, Azure PCR events, TDX measurements or
+self-reported configuration hashes as native-SNP launch measurements.</p>
+<h2 id="what-each-identifier-means">What each identifier means<a class="headerlink" href="#what-each-identifier-means" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Identifier</th>
+<th>Meaning</th>
+<th>What it does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OCI digest</td>
+<td>Identity of an OCI object</td>
+<td>Guest launch identity or effective mounted configuration</td>
+</tr>
+<tr>
+<td>Existing image comparison snapshot</td>
+<td>Equality of selected filesystem/configuration build outputs</td>
+<td>A hardware measurement</td>
+</tr>
+<tr>
+<td>Artifact SHA-256 and size</td>
+<td>Exact independently supplied build input bytes</td>
+<td>That the artifact is present or enforced in a running guest</td>
+</tr>
+<tr>
+<td>Native-SNP measurement, 48 raw bytes</td>
+<td>Expected signed launch digest from the reviewed measurement procedure</td>
+<td>Code loaded afterward unless the measured loader authenticates it</td>
+</tr>
+<tr>
+<td>Effective configuration SHA-256</td>
+<td>Exact receiver constructor inputs and fixed profile</td>
+<td>Protection against modified code that lies about those inputs</td>
+</tr>
+<tr>
+<td>Provisioning-policy SHA-256</td>
+<td>Exact existing domain-separated policy context, including epoch and platform controls</td>
+<td>Authorization to change that policy</td>
+</tr>
+<tr>
+<td>Deployment approval identity</td>
+<td>Domain-separated SHA-256 of the canonical approval record</td>
+<td>Hardware validation, key installation or model execution</td>
+</tr>
+</tbody>
+</table>
+<p>The record commits to seven artifact roles: <code>application</code>, <code>command_line</code>,
+<code>configuration</code>, <code>firmware</code>, <code>initrd</code>, <code>kernel</code>, and <code>measurement_tool</code>, in that
+order. Each role has a SHA-256 digest and nonzero size. The application artifact
+must identify the complete approved application/dependency bundle. The tool
+artifact should identify the reviewed measurement-tool distribution and its
+reproducible environment. The separate initrd must actually contain the approved
+runtime bundle; the record generator does not inspect that relationship. The
+separate <code>wcm.boot_bundle --verify</code> command rebuilds and compares the complete
+initramfs from the runtime TAR and loader. Use it before deriving the approval;
+independent packaging review is still required before a hardware claim.</p>
+<p>Records omit local filenames and timestamps. Identity is
+<code>SHA256(domain || canonical_json)</code>, where the domain is the ASCII string
+<code>wcm/deployment-approval/v1</code> followed by one NUL byte. It is serialized as a
+<code>sha256:</code> value. Canonical JSON sorts object keys,
+uses compact separators and ASCII escapes, and preserves the required artifact
+order. Duplicate JSON members, extra fields, malformed digests, missing/repeated
+roles and unsupported profiles fail validation. Nested records are immutable.</p>
+<h2 id="derive-and-check-an-owner-approval">Derive and check an owner approval<a class="headerlink" href="#derive-and-check-an-owner-approval" title="Permanent link">&para;</a></h2>
+<p>On the trusted owner/build host, first derive the expected launch measurement
+with the independently reviewed tool, using the actual firmware, kernel,
+initrd, command line and vCPU parameters. <strong>Do not copy the measurement from a
+target report.</strong> The WCM command below hashes the inputs and checks consistency;
+it does not calculate the SNP launch digest or approve the measurement tool.</p>
+<p>Create <code>identity-inputs.json</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"artifacts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"application"</span><span class="p">:</span><span class="w"> </span><span class="s2">"broker-runtime.tar"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"command_line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kernel-command-line.txt"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"configuration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"approved-broker.json"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"firmware"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OVMF.fd"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"initrd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"broker-initrd.img"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"kernel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vmlinuz"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"measurement_tool"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reviewed-measurement-tool.tar"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"launch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"vmm_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QEMU"</span><span class="p">,</span><span class="w"> </span><span class="nt">"vcpus"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"vcpu_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPYC-v4"</span><span class="p">,</span><span class="w"> </span><span class="nt">"guest_features"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x1"</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"expected_measurement_hex"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;96 lowercase hex characters from independent prediction&gt;"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"policy_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"approved-policy.json"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Replace the placeholder with the independently derived result. The approved
+policy must contain that measurement and the reviewed effective configuration
+digest. See <a href="../owner-provisioning-client/">the owner client</a> for deriving the
+effective digest from actual configuration inputs.</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>wcm.deployment_identity<span class="w"> </span>identity-inputs.json<span class="w"> </span>&gt;<span class="w"> </span>approved-identity.json
+python<span class="w"> </span>-m<span class="w"> </span>wcm.deployment_identity<span class="w"> </span>identity-inputs.json<span class="w"> </span>--identity-only
+python<span class="w"> </span>-m<span class="w"> </span>wcm.deployment_identity<span class="w"> </span>identity-inputs.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--verify-approval<span class="w"> </span>approved-identity.json<span class="w"> </span>--expected-identity<span class="w"> </span>sha256:&lt;owner-pin&gt;
+</code></pre></div>
+<p>The last command re-derives the candidate from files and compares it to the
+independently pinned approval. Changed application/configuration bytes, launch
+parameters, tool inputs or policy produce a different identity. Protect the
+approval and its pin independently from the deployment. An attacker who can
+replace both on the owner host can change what is approved. Read and hash inputs
+from a frozen build snapshot; this command is not a concurrent filesystem-mutation
+guard or a launcher.</p>
+<p>Opt in on the owner provisioning client with both fields:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"deployment_approval_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"approved-identity.json"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"deployment_approval_identity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:&lt;independently approved identity&gt;"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>These fields extend the existing owner configuration. A missing half, changed
+record, wrong pin or policy mismatch fails before contacting the broker. The
+library <code>OwnerProvisioner</code> also accepts <code>deployment_approval</code>; this object must
+come from trusted owner inputs. Its policy checks apply at construction, update
+and release. The existing signed-report verifier still authenticates the nonce,
+raw measurement, configuration/policy binding, platform fields and recipient key
+before sealing anything. No verifier is replaced by an artifact hash check.
+The wire report binds the policy referenced by the approval; it does not gain a
+new field containing the approval record or its artifact list. Their relationship
+depends on the independently reviewed measurement and packaging procedure.</p>
+<p>The approval commits to the full provisioning policy, so even an epoch-only
+update needs a newly reviewed record and a new owner instance. The existing
+durable epoch store rejects stale owners once the new policy is admitted. It
+still requires protected, nonsnapshot owner storage.</p>
+<p>Receipts include the approval identity when configured and always report
+<code>application_identity_established: false</code> in this software slice. Legacy clients
+without the optional fields retain their existing native-SNP policy behavior.
+Neither mode proves installation or protected execution.</p>
+<h2 id="provisional-adapter-snp-direct-boot-with-an-initrd-contained-broker">Provisional adapter: SNP direct boot with an initrd-contained broker<a class="headerlink" href="#provisional-adapter-snp-direct-boot-with-an-initrd-contained-broker" title="Permanent link">&para;</a></h2>
+<p>The intended chain is AMD-rooted SNP evidence → measured OVMF/initial vCPU state
+and kernel-hash metadata → approved kernel/initrd/command line → fixed broker
+entry point and complete runtime dependencies. The approved image must have no
+unmeasured executable filesystem, network package installation, interactive
+console, debug/admin shell or host-controlled interpreter/import override.</p>
+<p>VirTEE's <a href="https://github.com/virtee/sev-snp-measure">measurement tool</a> accepts
+firmware, kernel, initrd, command-line and vCPU inputs for offline prediction.
+Its output depends on these launch choices; firmware support for kernel hashes
+is required for this profile. Pin the tool and environment rather than relying
+on a moving default. This procedure specifies inputs, not a claim that WCM has
+validated a particular firmware/QEMU/kernel combination.</p>
+<p>The <a href="../broker-measurement-profile/">offline prediction procedure</a> now pins the
+external source, checks hash-table coverage and records exact candidate inputs.
+It includes a bounded OVMF/QEMU source review and software substitution tests.
+The approval generator still consumes the independently derived digest; it
+does not invoke or approve the predictor automatically.</p>
+<p>The broker's effective configuration can be provided as untrusted <strong>data</strong> to
+the measured loader. The loader must instantiate only the fixed approved code,
+compute the digest of the actual loaded constructor inputs, and bind that digest
+and the exact provisioning policy to its freshly generated in-boundary transport
+key. The owner's existing nonce-bound report verification then checks that
+binding. <a href="https://docs.kernel.org/virt/coco/sev-guest.html">Linux's SEV guest API</a>
+allows guest-supplied report data; that field is meaningful only when the
+measurement identifies code that computes it honestly.</p>
+<p>This distinction also avoids a circular build dependency: do not embed a policy
+containing the final launch measurement into the initrd whose measurement is
+being calculated. Treat the later policy as untrusted data, enforce the measured
+loader's fixed behavior, and verify its full context from independent owner
+inputs. A mutable image or generic guest that lets arbitrary code request reports
+cannot satisfy this adapter merely by echoing the approved configuration hash.</p>
+<p>The current Python receiver and report-binding checks are reusable components.
+The provisional builder and fixed loader implement the packaging and handoff
+restrictions described in the boot guide. Software VM boot is exercised, while
+the measured OVMF chain and matching live hardware evidence remain required work. Unsupported deployment layouts
+must report the property as not established.</p>
+<h2 id="required-hardware-validation-separately-authorized">Required hardware validation, separately authorized<a class="headerlink" href="#required-hardware-validation-separately-authorized" title="Permanent link">&para;</a></h2>
+<p>Freeze and retain the source revision, build/dependency inputs, tool distribution,
+launch parameters, expected digest, approval record and independently obtained
+AMD trust inputs <strong>before</strong> launching the target. Then run:</p>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Required observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approved image/configuration, fresh key and challenge</td>
+<td>Authenticated report matches independent prediction; only the recipient opens the sealed envelope</td>
+</tr>
+<tr>
+<td>Substituted application/dependency in initrd</td>
+<td>Re-derived digest/approval changes; owner rejects the actual mismatched report</td>
+</tr>
+<tr>
+<td>Substituted firmware/kernel/initrd/command line or vCPU state</td>
+<td>Prediction/report mismatch denies provisioning</td>
+</tr>
+<tr>
+<td>Changed runtime configuration or policy with unchanged boot image</td>
+<td>Effective-input check or signed policy binding denies before envelope creation</td>
+</tr>
+<tr>
+<td>Replaced transport key, replayed challenge or old-boot envelope</td>
+<td>Authentication/freshness fails; no successful installation in the new instance</td>
+</tr>
+<tr>
+<td>Post-appraisal file mutation or executable injection</td>
+<td>Image/loader refuses the mutation or stops admission; unchanged attestation alone is not a pass</td>
+</tr>
+<tr>
+<td>Debug/admin path, report-device access or key export attempt</td>
+<td>Denied by the deployed boundary; a Python private attribute is not protection</td>
+</tr>
+<tr>
+<td>Restart and update</td>
+<td>Fresh in-boundary key, new challenge and owner-approved policy; no inherited plaintext key or stale owner admission</td>
+</tr>
+</tbody>
+</table>
+<p>Record actual recipient/sink observations, not only reported errors. Include
+negative controls that remove the relevant restriction and cause the oracle to
+fail. Retain sanitized outcomes, exact verifier commands and limitations; raw
+reports and device-linked certificates require private handling. Software tests
+use synthetic signed SNP reports and cannot replace this run.</p>
+<p>This profile does not establish side-channel resistance, host-wide recovery,
+secure erasure, rollback-resistant runtime state or protected GPU execution.
+Issue #144 remains open until the measured loader and live substitution/runtime
+tests provide evidence for its stated deployment claim.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.path", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://agentrust-io.com/supernav.js?v=22"></script>
+      
+    
+  </body>
+</html>
